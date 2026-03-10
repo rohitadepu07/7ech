@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Lexend", sans-serif;
+  
+  --color-neo-black: #000000;
+  --color-neo-white: #ffffff;
+  --color-neo-yellow: #FBbf24; /* Amber-400ish but brighter */
+  --color-neo-green: #a3e635; /* Lime-400 */
+  --color-neo-pink: #f472b6; /* Pink-400 */
+  --color-neo-cyan: #22d3ee; /* Cyan-400 */
+  --color-neo-purple: #c084fc; /* Purple-400 */
+  
+  --color-background: var(--color-neo-white);
+  --color-foreground: var(--color-neo-black);
+  --color-primary: var(--color-neo-black);
+  --color-primary-foreground: var(--color-neo-white);
+  --color-secondary: var(--color-neo-yellow);
+  --color-secondary-foreground: var(--color-neo-black);
+  --color-muted: #f4f4f5;
+  --color-muted-foreground: #71717a;
+  --color-accent: var(--color-neo-cyan);
+  --color-accent-foreground: var(--color-neo-black);
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+  --color-border: var(--color-neo-black);
+  --color-input: var(--color-neo-black);
+  --color-ring: var(--color-neo-black);
+  
+  --shadow-neo: 4px 4px 0px 0px #000000;
+  --shadow-neo-lg: 8px 8px 0px 0px #000000;
+  --shadow-neo-sm: 2px 2px 0px 0px #000000;
+}
+
+@layer base {
+  body {
+    @apply bg-neo-white text-neo-black font-body antialiased;
+    background-color: #fdfdfd;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-neo-black;
+  }
+}
+
+@layer components {
+  .neo-box {
+    @apply border-2 border-neo-black shadow-neo bg-white transition-transform hover:-translate-y-1 hover:translate-x-1 hover:shadow-neo-lg;
+  }
+  .neo-button {
+    @apply px-6 py-3 font-display font-bold text-neo-black border-2 border-neo-black shadow-neo bg-neo-yellow hover:bg-neo-green transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none;
+  }
+  .neo-input {
+    @apply w-full p-3 border-2 border-neo-black shadow-neo-sm focus:outline-none focus:shadow-neo transition-all font-body;
+  }
+  .neo-card {
+    @apply border-2 border-neo-black shadow-neo p-6 bg-white;
+  }
+}
